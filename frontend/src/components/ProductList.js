@@ -20,7 +20,7 @@ const ProductList = () => {
   const navigate = useNavigate();
 
   useEffect(() => { (async()=>{ try{ const res = await api.get("/products");
-      console.log("Products API response:", res.data); // 👈 yahan likho
+      console.log("Products API response:", res.data); 
     setProducts(res.data); }catch(e){console.error(e);} })(); }, []);
 
   const handleAdd = (id) => { if (!user) return navigate("/login"); addToCart(id, 1); };
