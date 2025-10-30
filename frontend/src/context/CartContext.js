@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
         console.error(err.response?.data || err.message);
        } };
   const total = cart.items.reduce((s, it) => {
-  if (!it.product) return s; // product null hai to skip kar do
+  if (!it.product) return s; // product null hai to skip 
   const price = it.product.price || 0;
   const off = it.product.offer || 0;
   const final = price - (price * off) / 100;
