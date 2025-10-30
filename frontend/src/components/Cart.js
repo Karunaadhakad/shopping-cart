@@ -7,7 +7,10 @@ const imageMap = { "product1.jpeg": img1, "product2.jpeg": img2, "product3.jpeg"
 
 const Cart = () => {
   const { cart, updateItem, total } = useContext(CartContext);
-  if (!cart || !cart.items || cart.items.length===0) return <div className="container mt-4"><h4>Your cart is empty</h4></div>;
+  if (!cart || !cart.items || cart.items.length===0) 
+    return <div className="container mt-4">
+      <h4>Your cart is empty</h4>
+      </div>;
 
   return (
     <div className="container mt-4">
@@ -15,7 +18,7 @@ const Cart = () => {
       <div className="list-group">
         {cart.items.map((it) => {
   const p = it.product;
-  if (!p) return null; // null product ko skip karo taaki crash na ho
+  if (!p) return null; // null product ko skip kiya taaki crash na ho
 
   const final = (p.price || 0) - ((p.price || 0) * (p.offer || 0)) / 100;
   const src = imageMap[p.image] || img1;
