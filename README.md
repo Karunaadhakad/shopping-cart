@@ -88,7 +88,7 @@ npm start
    - npm run seed
    - npm start
 3. Frontend:
-   - npx create-react-app frontend (or use provided frontend folder)
+   - npx create-react-app@latest frontend (or use provided frontend folder)
    - replace src/ with provided files
    - npm install axios bootstrap react-router-dom
    - npm start
