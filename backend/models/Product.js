@@ -4,6 +4,6 @@ const productSchema = new mongoose.Schema({
   description: String,
   price: Number,
   offer: { type: Number, default: 0 },
-  image: String // store image filename (frontend will map it)
+  image: String 
 });
 export default mongoose.model("Product", productSchema);

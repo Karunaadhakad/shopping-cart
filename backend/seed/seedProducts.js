@@ -27,7 +27,7 @@ const run = async () => {
     await connectDB();
     await Product.deleteMany({});
     await Product.insertMany(products);
-    console.log("✅ Seeded products with images");
+    console.log("Seeded products with images");
     process.exit(0);
   } catch (err) {
     console.error(err);

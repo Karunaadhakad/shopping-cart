@@ -5,10 +5,10 @@ export const getCart = async (req, res) => {
   try {
     const cart = await Cart.findOne({ user: req.user.id }).populate("items.product");
     if (!cart) return res.json({ items: [] });
-    // 🧹 Filter out items with null products
+    // Filter out items with null products
     cart.items = cart.items.filter(it => it.product !== null);
 
-    // Optional: Save cleaned cart to DB
+    //  Save cleaned cart to DB
     await cart.save();
     res.json(cart);
   } catch (err) { res.status(500).json({ error: "Server error" }); }
